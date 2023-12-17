@@ -1,8 +1,8 @@
 # Builds latest OVMF images
 
-Building the latest OVMF images with the correct packages/libraries can be difficult, it is easier to package utility as an OCI (docker) image that can perform the task on your local host.
+Building the latest OVMF images with the correct packages/libraries can be difficult, it is easier to package as an OCI (docker) image that can perform the task on your local host.
 
-## on X86_64 Ubuntu
+## X86_64 Ubuntu
 
 [Install Docker](https://fabianlee.org/2023/09/14/docker-installing-docker-ce-on-ubuntu/), then run the following commands on Ubuntu.
 
@@ -20,9 +20,11 @@ make
 make docker-build-archs
 ```
 
-## on MacOSX
+## MacOSX M1
 
-To avoid the need for licensing Docker Desktop, install podman instead. [Install Brew](https://docs.brew.sh/Installation) first.
+[Install Brew](https://docs.brew.sh/Installation) first.
+
+To avoid the need for licensing Docker Desktop, install podman instead.
 
 ```
 brew install podman
