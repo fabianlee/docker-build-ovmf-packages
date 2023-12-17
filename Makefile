@@ -50,6 +50,8 @@ docker-run-fg:
 docker-build-archs:
 	mkdir -p Build
 	$(DOCKERCMD) run -it -v $(PWD)/Build:/home/ubuntu/tianocore/Build --rm localhost/$(OPV) $(BUILD_ARCHS_CMD)
+	@echo ""
+	find Build -name '*.fd'
 
 ## pushes to docker hub (must do 'docker login' first)
 docker-push:
