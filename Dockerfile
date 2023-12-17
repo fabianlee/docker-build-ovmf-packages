@@ -1,3 +1,5 @@
+# image is multi-arch, and will pull based on host architecture (linux/amd64 | linux/arm64/v8)
+# https://hub.docker.com/_/ubuntu/tags
 FROM ubuntu:jammy-20231128
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -32,9 +34,6 @@ RUN mkdir -p ${WORKSPACE}; cd ${WORKSPACE} && \
 # python needed for making BaseTools
 #RUN apt install -q -y -o Dpkg::Options::="--force-confnew" python3-dev python-is-python3
 
-# cross-compiler support for gcc
-#RUN apt install -q -y -o Dpkg::Options::="--force-confnew" gcc-aarch64-linux-gnu
-
 RUN cd edk2 && \
   . ./edksetup.sh && \
   make -C BaseTools/
@@ -42,8 +41,6 @@ RUN cd edk2 && \
 # https://www.garyhawkins.me.uk/custom-logo-on-uefi-boot-screen/
 # custom logo for OVMF
 COPY custom-logo.bmp edk2/MdeModulePkg/Logo/Logo.bmp
-#RUN echo ${PACKAGES_PATH} && \
-#  uefi-tools/edk2-build.sh juno
 
 # show tag being used
 RUN cd edk2 && git branch && git tag
