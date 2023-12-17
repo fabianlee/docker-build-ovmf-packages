@@ -1,12 +1,12 @@
-# Builds OVMF images using gcc cross-compilation
+# Builds latest OVMF images using utility tool
 
-Building the latest OVMF images with the correct libraries can be difficult, so it is better to package up all the OS level dependencies.
+Building the latest OVMF images with the correct packages/libraries can be difficult, it is easier to package utility as an OCI (docker) image that can perform the task on your local host.
 
 ## on X86_64 Ubuntu
 
 [Install Docker](https://fabianlee.org/2023/09/14/docker-installing-docker-ce-on-ubuntu/), then 
 
-`
+```
 # required OS packages
 sudo apt install -y make git
 
@@ -18,13 +18,13 @@ make
 
 # use image to build latest OVMF
 make docker-build-archs
-`
+```
 
 ## on MacOSX
 
 To avoid the need for licensing Docker Desktop, use podman instead.
 
-`
+```
 brew install podman
 podman machine init
 podman machine start
@@ -37,4 +37,4 @@ make
 
 # use image to build latest OVMF
 make docker-build-archs
-`
+```
