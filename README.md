@@ -18,9 +18,6 @@ make
 
 # use image to build latest OVMF
 make docker-build-archs
-
-# results
-find Build -name '*.fd'
 `
 
 ## on MacOSX
@@ -40,7 +37,4 @@ make
 
 # use image to build latest OVMF
 make docker-build-archs
-
-# results
-find Build -name '*.fd'
 `
