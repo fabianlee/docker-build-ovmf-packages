@@ -8,7 +8,12 @@ Utility mounts local 'Build' subdirectory where OVMF images will be placed.
 
 ### Prerequisites
 
-[Install Docker](https://fabianlee.org/2023/09/14/docker-installing-docker-ce-on-ubuntu/), then run the following commands on Ubuntu.
+[Install Docker](https://fabianlee.org/2023/09/14/docker-installing-docker-ce-on-ubuntu/), and following OS packages on Ubuntu.
+
+```
+# required OS packages
+sudo apt install -y make git
+```
 
 ### Build OVMF
 
