@@ -6,7 +6,11 @@ Utility mounts local 'Build' subdirectory where OVMF images will be placed.
 
 ## X86_64
 
+### Prerequisites
+
 [Install Docker](https://fabianlee.org/2023/09/14/docker-installing-docker-ce-on-ubuntu/), then run the following commands on Ubuntu.
+
+### Build OVMF
 
 ```
 # required OS packages
@@ -22,7 +26,16 @@ make
 make docker-build-archs
 ```
 
+### Testing
+
+```
+./test-x86-onx86.sh
+```
+
+
 ## MacOSX on Apple Silicon (M1)
+
+### Prerequisites
 
 [Install Brew](https://docs.brew.sh/Installation) first.
 
@@ -33,6 +46,8 @@ brew install podman
 podman machine init
 podman machine start
 ```
+
+### Build OVMF
 
 Then run the following commands on MacOSX.
 
@@ -45,4 +60,10 @@ make
 
 # use image to build latest OVMF
 make docker-build-archs
+```
+
+### Testing
+
+```
+./test-arm64-on-arm64.sh
 ```
