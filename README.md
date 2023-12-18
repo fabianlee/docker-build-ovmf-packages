@@ -33,6 +33,8 @@ make docker-build-archs
 
 ### Testing
 
+[Install KVM](https://fabianlee.org/2018/08/27/kvm-bare-metal-virtualization-on-ubuntu-with-kvm/) first, then run:
+
 ```
 ./test-x86-onx86.sh
 ```
